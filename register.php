@@ -122,27 +122,48 @@ if (isset($_POST['up'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dar alta de cuenta</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/b1473ebfe8.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
-    <h1>Gracias por querer formar parte de nuestro banco</h1>
-    <p>Para darse de alta en nuestro banco completa lo siguiente</p>
-    <form method="post">
-        <label>Numero de cuenta:</label>
-        <input type="text" value="<?php echo $number_r ?>" name="numero_c" readonly>
-        <label>Nombre del cliente:</label>
-        <input type="text" name="name">
-        <label>Correo:</label>
-        <input type="email" name="email">
-        <label>Tipo de cuenta</label>
-        <select name="tipo_c" id="tipo_c">
-            <option value="opcion1">Selecciona el tipo de cuenta que deseas abrir</option>
-            <option value="Debito">Debito</option>
-            <option value="Ahorro">Ahorro</option>
-            <option value="Tarjeta de credito">Tarjeta de credito</option>
-        </select>
-        <button type="submit" name="up">Dar de alta</button>
-    </form>
+<body class="body-registro">
+    <div class="container-principal-register">
+        <div class="content-register">
+            <div class="content-register-text">
+                <h1>Gracias por querer formar parte de nuestro banco</h1>
+                <br>
+                <p>Para registrarte en nuestro banco, completa lo siguiente:</p>
+                <br>
+                <a class="anclaje-registrar" href="login.php">¿Ya estás registrado? Inicia sesión aquí</a>
+            </div>
+        </div>
+        <div class="content-register-form">
+            <div class="container-register-form">
+                <h1>Registrar</h1>
+            <form method="post">
+                <input class="input-form-1" type="text" value="<?php echo $number_r ?>" name="numero_c" readonly required>
+                <label class="label-form-1">Numero de cuenta </label>
+
+                
+                <input class="input-form-2" type="text" name="name" required>
+                <label class="label-form-2">Nombre del cliente</label>
+
+                <input class="input-form-3" type="email" name="email" required>
+                <label class="label-form-3">Correo</label>
+
+                
+                <select class="input-form-4" name="tipo_c" id="tipo_c">
+                    <option value="opcion1">Selecciona el tipo de cuenta que deseas abrir</option>
+                    <option value="Debito">Debito</option>
+                    <option value="Ahorro">Ahorro</option>
+                    <option value="Tarjeta de credito">Tarjeta de credito</option>
+                </select>
+                <label class="label-form-4">Tipo de cuenta</label>
+                <button class="btn-form" type="submit" name="up">Dar de alta</button>
+            </form>
+        </div>
+        </div>
+    </div>
 </body>
 
 </html>
