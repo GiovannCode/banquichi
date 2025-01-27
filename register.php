@@ -135,6 +135,10 @@ if (isset($_POST['up'])) {
                 <p>Para registrarte en nuestro banco, completa lo siguiente:</p>
                 <br>
                 <a class="anclaje-registrar" href="login.php">¿Ya estás registrado? Inicia sesión aquí</a>
+                <br>
+                <br>
+                <br>
+                <a class="anclaje-home" href="index.php"> <i class="fa-solid fa-house"></i> Inicio</a>
             </div>
         </div>
         <div class="content-register-form">
