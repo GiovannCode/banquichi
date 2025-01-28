@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,7 +46,7 @@
     <div class="container-2-inicio">
         <div class="container-2-info">
             <div class="container-2-info-text">
-                <h1>¡Bienvenido/a de nuevo, <span class="highlight">[Nombre del usuario]</span>!</h1>
+                <h1>¡Bienvenido/a de nuevo, <span class="highlight"><?php echo $_SESSION['name']?></span>!</h1>
                 <br>
                 <h2>Es un gusto tenerte aquí. Tu tranquilidad financiera es nuestra prioridad.</h2>
                 <p>"Recuerda: Siempre puedes revisar tus transacciones recientes y mantener tus finanzas al día de forma segura y rápida."</p>
