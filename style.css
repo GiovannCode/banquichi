@@ -10,8 +10,6 @@
     scrollbar-color: rgb(37, 23, 51) rgba(255, 166, 0, 0);
 }
 
-
-
 .body-index{
     background-color: #03071c;
     font-family: "Montserrat";
@@ -845,6 +843,23 @@ footer {
     align-items: end;
     justify-content: center;
 }
+
+.service-section-inversion{
+    margin-bottom: 0px;
+}
+
+.service-section-inversion img {
+    width: 100%;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    transform-style: preserve-3d; 
+}
+
+.service-section-inversion img:hover {
+    transform: rotateX(10deg) rotateY(10deg) scale(1.1); 
+    filter: hue-rotate(180deg); 
+}
+
 
 .container-4-inicio{
     width: 90%;

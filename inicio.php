@@ -33,7 +33,6 @@
                 <li><strong>JPY</strong> - Yen Japonés</li>
                 <li><strong>GBP</strong> - Libra Esterlina</li>
                 <li><strong>CAD</strong> - Dólar Canadiense</li>
-                <li><strong>AUD</strong> - Dólar Australiano</li>
                 <li><strong>CNY</strong> - Yuan Chino</li>
                 </ul>
             </div>
@@ -74,8 +73,8 @@
             </div>
         </section>
         
-        <section class="service-section">
-            <img class="imagen-section-2" src="img/img-7.png" alt="Inversiones">
+        <section style="position: relative; bottom: 0px; top: 50px;" class="service-section">
+            
             <h2 class="service-title">Inversión</h2>
             <p class="service-description">
             Haz crecer tu dinero con nuestras opciones de inversión seguras y rentables.
@@ -88,6 +87,7 @@
             <div class="service-cta">
                 <a href="#solicitar-inversion" class="service-button">Empieza a invertir</a>
             </div>
+            <img style="position: relative; bottom: 0px; top: 10px;" class="imagen-section-2" src="img/img-7.png" alt="Tarjeta de Crédito">
         </section>
             
     </div>
