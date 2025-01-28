@@ -10,7 +10,7 @@
 <nav class="navbar">
     <a href="#" class="logo">Banquichi</a>
     <ul class="nav-links">
-        <li><a href="#">Inicio</a></li>
+        <li><a href="index.php">Inicio</a></li>
         <li><a href="login.php">Iniciar Sesion</a></li>
         <li><a href="register.php">Darse de alta</a></li>
         <li><a href="#">Contacto</a></li>
