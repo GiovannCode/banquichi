@@ -1,5 +1,14 @@
 <?php 
 session_start();
+if (isset($_POST['desac'])) {
+    $email = $_SESSION['email'];
+    $estado = false;
+    $sql = $cnnPDO->prepare("UPDATE form1 SET estado = ? WHERE email = ?");
+    $sql->execute([$estado, $email]);
+    unset($sql);
+    unset($cnnPDO);
+    echo $alerta;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -89,7 +98,11 @@ session_start();
                 <li class="service-item">Con estos datos podras realizar transacciones de forma segura</li>
             </ul>
             <div class="service-cta">
-                <a href="#solicitar-inversion" class="service-button">Empieza a invertir</a>
+                <form method="post">
+                    <input type="hidden" name="numero_c" value="<?php echo $_SESSION['numero_c']?>">
+                    <button class="service-button" type="submit" name="delete">Desactivar cuenta</button>
+                </form>
+                <!-- <a href="#solicitar-inversion" class="service-button">Desactivar cuenta</a> -->
             </div>
             <img style="position: relative; bottom: 0px; top: 10px;" class="imagen-section-2" src="img/img-7.png" alt="Tarjeta de Crédito">
         </section>
