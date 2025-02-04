@@ -1,6 +1,6 @@
 <?php
 require_once 'db_conexion.php';
-$random = rand(100000000000, 999999999999);
+$random = rand(100000, 999999);
 $number_r = $random;
 // do {
 //     $random = rand(100000000000, 999999999999);

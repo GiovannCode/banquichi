@@ -13,9 +13,9 @@ session_start();
 <nav class="navbar">
     <a href="#" class="logo">Banquichi</a>
     <ul class="nav-links">
-        <li><a href="index.php">Inicio</a></li>
-        <li><a href="login.php">Iniciar Sesion</a></li>
-        <li><a href="register.php">Darse de alta</a></li>
+        <li><a href="inicio.php">Inicio</a></li>
+        <li><a href="logout.php">Cerrar sesion</a></li>
+        <!-- <li><a href="register.php">Darse de alta</a></li> -->
         <li><a href="#">Contacto</a></li>
     </ul>
 </nav>
@@ -78,14 +78,15 @@ session_start();
         
         <section style="position: relative; bottom: 0px; top: 50px;" class="service-section">
             
-            <h2 class="service-title">Inversión</h2>
+            <h2 class="service-title">Datos de tu cuenta</h2>
             <p class="service-description">
-            Haz crecer tu dinero con nuestras opciones de inversión seguras y rentables.
+            Te mostramos la informacion basica para que puedas realizar tus transacciones de forma segura.
             </p>
             <ul class="service-benefits">
-                <li class="service-item">Opciones a corto, mediano y largo plazo.</li>
-                <li class="service-item">Asesoría financiera personalizada.</li>
-                <li class="service-item">Rendimientos competitivos.</li>
+                <li class="service-item">Numero de cuenta: <?php echo $_SESSION['numero_c']?> </li>
+                <li class="service-item">Correo: <?php echo $_SESSION['email']?> </li>
+                <li class="service-item">Tipo de cuenta: <?php echo $_SESSION['tipo_c']?> </li>
+                <li class="service-item">Con estos datos podras realizar transacciones de forma segura</li>
             </ul>
             <div class="service-cta">
                 <a href="#solicitar-inversion" class="service-button">Empieza a invertir</a>
