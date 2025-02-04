@@ -145,14 +145,14 @@ if (isset($_POST['up'])) {
             <div class="container-register-form">
                 <h1>Registrar</h1>
             <form method="post">
-                <input class="input-form-1" type="text" value="<?php echo $number_r ?>" name="numero_c" readonly required>
+                <input class="input-form-1" type="text" value="<?php echo $number_r ?>" name="numero_c" readonly required><i class="fa-solid fa-arrow-up-9-1"></i>
                 <label class="label-form-1">Numero de cuenta </label>
 
                 
-                <input class="input-form-2" type="text" name="name" required>
+                <input class="input-form-2" type="text" name="name" required><i class="fa-solid fa-user"></i>
                 <label class="label-form-2">Nombre del cliente</label>
 
-                <input class="input-form-3" type="email" name="email" required>
+                <input class="input-form-3" type="email" name="email" required><i class="fa-solid fa-envelope"></i>
                 <label class="label-form-3">Correo</label>
 
                 
@@ -162,7 +162,7 @@ if (isset($_POST['up'])) {
                     <option value="Ahorro">Ahorro</option>
                     <option value="Tarjeta de credito">Tarjeta de credito</option>
                 </select>
-                <label class="label-form-4">Tipo de cuenta</label>
+                <label class="label-form-4">Tipo de cuenta</label><i class="fa-solid fa-file-invoice"></i>
                 <button class="btn-form" type="submit" name="up">Dar de alta</button>
             </form>
         </div>

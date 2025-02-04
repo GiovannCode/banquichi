@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('https://fonts.cdnfonts.com/css/rengkox');
 
+                
 *{
     margin: 0;
     padding: 0;
@@ -581,7 +583,7 @@ footer {
     outline: none;
 }
 
-.fa-user, .fa-envelope, .fa-phone, .fa-money-bill, .fa-lock,.fa-hashtag,.fa-key,.fa-file-invoice{
+.fa-user, .fa-envelope, .fa-phone, .fa-money-bill, .fa-lock,.fa-hashtag,.fa-key,.fa-file-invoice,.fa-arrow-up-9-1,.fa-file-invoice{
     position: absolute;
     transform: translateY(-40%);
     margin-left: 90%;
@@ -623,6 +625,9 @@ footer {
     border-bottom: 2px solid #b349f9;
 }
 
+option{
+    background-color: #03071c;
+}
 
 .input-form-2:focus ~ .label-form-2,
 .input-form-2:valid ~ .label-form-2 {
@@ -788,6 +793,14 @@ footer {
     transform: scale(1.05);
 }
 
+.saldo{
+    width: 100%;
+    height: 50px;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 
 .container-2-inicio{
