@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,10 +22,10 @@
 
 
                     <input class="input-form-2" type="password" name="pass" required><i class="fa-solid fa-lock"></i>
-                    <label class="label-form-2">A Quien</label>
+                    <label class="label-form-2">Monto</label>
 
                 <span class="saldo">
-                    <p>saldo 0$</p>
+                    <p><?php echo $_SESSION['saldo']?>$</p>
                     <button class="btn-form-trans" type="submit" name="login">Transferir</button>
                 </span>
                 </form>

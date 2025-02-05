@@ -1,6 +1,14 @@
 <?php 
 session_start();
 require_once 'db_conexion.php';
+$numero_c = $_SESSION['numero_c'];  
+$sql = $cnnPDO->prepare("SELECT saldo FROM cliente WHERE numero_c = ?");
+$sql->execute([$numero_c]);
+$resultado = $sql->fetch(PDO::FETCH_ASSOC);
+
+if ($resultado) {
+    $_SESSION['saldo'] = $resultado['saldo']; 
+}
 if (isset($_POST['desac'])) {
     $numero_c = $_SESSION['numero_c'];
     $estado = false;

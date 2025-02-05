@@ -1,3 +1,17 @@
+<?php
+session_start();
+require_once 'db_conexion.php';
+if (isset($_POST['depositar'])) {
+    $numero_c = $_SESSION['numero_c'];
+    $saldo = $_POST['saldo'];
+    $sql = $cnnPDO->prepare("UPDATE cliente SET saldo = saldo + ? WHERE numero_c = ?");
+    $sql->execute([$saldo, $numero_c]);
+    $_SESSION['saldo'] = $saldo;
+    unset($sql);
+    unset($cnnPDO);
+    header('location:inicio.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,17 +37,17 @@
             <div class="container-register-form">
                 <h1>Depositar</h1>
             <form method="post">
-                <input class="input-form-1" type="text" value="<?php echo $number_r ?>" name="numero_c" readonly required><i class="fa-solid fa-arrow-up-9-1"></i>
-                <label class="label-form-1">Numero de cuenta </label>
+                <!-- <input class="input-form-1" type="text" value="// name="numero_c" readonly required><i class="fa-solid fa-arrow-up-9-1"></i>
+                <label class="label-form-1">Numero de cuenta </label> -->
 
                 
-                <input class="input-form-2" type="text" name="name" required><i class="fa-solid fa-user"></i>
-                <label class="label-form-2">A Quien</label>
+                <!-- <input class="input-form-2" type="text" name="name" required><i class="fa-solid fa-user"></i>
+                <label class="label-form-2">A Quien</label> -->
 
-                <input class="input-form-3" type="email" name="number" required><i class="fa-solid fa-money-bill-transfer"></i>
+                <input class="input-form-3" type="text" name="saldo" required><i class="fa-solid fa-money-bill-transfer"></i>
                 <label class="label-form-3">Monto A Depositar</label>
 
-                <button class="btn-form" type="submit" name="up">Depositar</button>
+                <button class="btn-form" type="submit" name="depositar">Depositar</button>
             </form>
         </div>
         </div>
