@@ -23,7 +23,7 @@
 
                 <span class="saldo">
                     <p>saldo 0$</p>
-                    <button class="btn-form" type="submit" name="login">Transferir</button>
+                    <button class="btn-form-trans" type="submit" name="login">Transferir</button>
                 </span>
                 </form>
             </div>
