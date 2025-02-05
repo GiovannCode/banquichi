@@ -15,6 +15,7 @@ if (isset($_POST['login'])) {
         $_SESSION['name'] = $campo['name'];
         $_SESSION['email'] = $campo['email'];
         $_SESSION['tipo_c'] = $campo['tipo_c'];
+        $_SESSION['saldo'] = $campo['saldo'];
         header('location:inicio.php');
     }
 }
