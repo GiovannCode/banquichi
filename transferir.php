@@ -3,11 +3,10 @@ session_start();
 require_once 'db_conexion.php';
 
 if (isset($_POST['login'])) {
-    $numero_c_origen = $_SESSION['numero_c'];  // Cuenta del usuario logueado
-    $numero_c_destino = $_POST['numero_c'];  // Cuenta destino ingresada en el formulario
-    $monto = $_POST['monto'];  // Monto a transferir (mal nombrado como "pass" en el input)
+    $numero_c_origen = $_SESSION['numero_c']; 
+    $numero_c_destino = $_POST['numero_c'];  
+    $monto = $_POST['monto']; 
 
-    // Verificar si el saldo disponible es suficiente
     $sql = $cnnPDO->prepare("SELECT saldo FROM cliente WHERE numero_c = ?");
     $sql->execute([$numero_c_origen]);
     $origen = $sql->fetch(PDO::FETCH_ASSOC);
