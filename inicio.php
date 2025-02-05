@@ -33,10 +33,10 @@ if (isset($_POST['desac'])) {
     <a href="#" class="logo">Banquichi</a>
     <ul class="nav-links">
         <li><a href="inicio.php">Inicio</a></li>
-        <li><a href="logout.php">Cerrar sesion</a></li>
+        <li><a href="transferir.php">Transferir</a></li>
         <!-- <li><a href="register.php">Darse de alta</a></li> -->
         <li><a href="#">Contacto</a></li>
-        <li><a href="transferir.php">Transferir</a></li>
+        <li><a href="logout.php">Cerrar sesion</a></li>
     </ul>
 </nav>
 
@@ -106,7 +106,7 @@ if (isset($_POST['desac'])) {
                 <li class="service-item">Numero de cuenta: <?php echo $_SESSION['numero_c']?> </li>
                 <li class="service-item">Correo: <?php echo $_SESSION['email']?> </li>
                 <li class="service-item">Tipo de cuenta: <?php echo $_SESSION['tipo_c']?> </li>
-                <li class="service-item">Saldo: <?php echo $_SESSION['saldo']?></li>
+                <li class="service-item">Saldo: <?php echo $_SESSION['saldo']?>$</li>
             </ul>
             <div class="service-cta">
                 <form method="post">
