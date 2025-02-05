@@ -15,7 +15,7 @@
 
 	/* Definir las variables para la conexion al PDO */
 	define('DB_HOST', 'localhost');
-	define('DB_NAME', 'db_5tocuatri');
+	define('DB_NAME', 'banco');
 	define('DB_USER', 'root');
 	define('DB_PASSWORD', '');
 
