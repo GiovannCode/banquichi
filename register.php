@@ -17,8 +17,10 @@ if (isset($_POST['up'])) {
     $email = $_POST['email'];
     $tipo_c = $_POST['tipo_c'];
     $pass = $password;
-    $sql = $cnnPDO->prepare("INSERT INTO ba (numero_c, name, email, tipo_c, pass) VALUES (?, ?, ?, ?, ?)");
-    $sql->execute([$numero_c, $name, $email, $tipo_c, $pass]);
+    $saldo = 0;
+    $estado = true;
+    $sql = $cnnPDO->prepare("INSERT INTO cliente (numero_c, name, email, tipo_c, pass, saldo, estado) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    $sql->execute([$numero_c, $name, $email, $tipo_c, $pass, $saldo, $estado]);
     if ($sql) {
         echo "Se ha dado de alta la cuenta";
     } else {
