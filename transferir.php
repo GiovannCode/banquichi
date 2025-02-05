@@ -1,5 +1,39 @@
 <?php
 session_start();
+require_once 'db_conexion.php';
+
+if (isset($_POST['login'])) {
+    $numero_c_origen = $_SESSION['numero_c'];  // Cuenta del usuario logueado
+    $numero_c_destino = $_POST['numero_c'];  // Cuenta destino ingresada en el formulario
+    $monto = $_POST['monto'];  // Monto a transferir (mal nombrado como "pass" en el input)
+
+    // Verificar si el saldo disponible es suficiente
+    $sql = $cnnPDO->prepare("SELECT saldo FROM cliente WHERE numero_c = ?");
+    $sql->execute([$numero_c_origen]);
+    $origen = $sql->fetch(PDO::FETCH_ASSOC);
+
+    if (!$origen || $origen['saldo'] < $monto) {
+        echo "<script>alert('Saldo insuficiente para la transferencia.');</script>";
+    } else {
+        $sql = $cnnPDO->prepare("SELECT saldo FROM cliente WHERE numero_c = ?");
+        $sql->execute([$numero_c_destino]);
+        $destino = $sql->fetch(PDO::FETCH_ASSOC);
+
+        if (!$destino) {
+            echo "<script>alert('La cuenta destino no existe.');</script>";
+        } else {
+            $sql = $cnnPDO->prepare("UPDATE cliente SET saldo = saldo - ? WHERE numero_c = ?");
+            $sql->execute([$monto, $numero_c_origen]);
+
+            $sql = $cnnPDO->prepare("UPDATE cliente SET saldo = saldo + ? WHERE numero_c = ?");
+            $sql->execute([$monto, $numero_c_destino]);
+
+            $_SESSION['saldo'] -= $monto;
+
+            echo "<script>alert('Transferencia realizada con éxito.'); window.location.href='inicio.php';</script>";
+        }
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +55,7 @@ session_start();
                     <label class="label-form-3">Numero de cuenta </label>
 
 
-                    <input class="input-form-2" type="password" name="pass" required><i class="fa-solid fa-lock"></i>
+                    <input class="input-form-2" type="text" name="monto" required><i class="fa-solid fa-lock"></i>
                     <label class="label-form-2">Monto</label>
 
                 <span class="saldo">
