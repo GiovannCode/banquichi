@@ -4,7 +4,7 @@ session_start();
 if (isset($_POST['login'])) {
     $numero_c = $_POST['numero_c'];
     $pass = $_POST['pass'];
-    $select = $cnnPDO->prepare('SELECT * from ba WHERE numero_c =? and pass=?');
+    $select = $cnnPDO->prepare('SELECT * from cliente WHERE numero_c =? and pass=?');
 
     $select->execute([$numero_c, $pass]);
     $count = $select->rowCount();
