@@ -766,12 +766,14 @@ option{
     background: linear-gradient(0deg, #8b63d5 0%, #1f1c40 50%, #1f1c40 100%);
     grid-row: 1/6;
     grid-column: 7/9;
-    overflow: hidden; 
+    overflow: hidden;
+    overflow-y: scroll;
+    position: relative;
 }
 
 .container-1-inicio img{
-    width: 60%;
-    margin: 50px 70px 0px 70px;
+    width: 30%;
+    margin: 30px 35% 0px 35%;
 }
 
 .container-1-inicio button{
@@ -931,6 +933,7 @@ option{
 .container-monedas h2 {
     font-size: 1.8rem;
     color: #ffffff;
+    text-align: center;
 }
 .container-monedas p {
     font-size: 1rem;
@@ -939,6 +942,15 @@ option{
 .currency-list {
     list-style-type: none;
     padding: 0;
+    background-color: #1e1c3f85;
+    padding: 10px;
+    border-radius: 15px;
+    margin-top: 10px;
+    width: 95%;
+}
+
+.container-monedas img{
+    width: 20%;
 }
 .currency-list li {
     font-size: 1rem;
@@ -946,7 +958,7 @@ option{
     color: #ffffff;
 }
     strong {
-    color: #ffea00;
+    color: #ff9900;
 }
 
 .quick-access-section {
@@ -985,4 +997,14 @@ option{
 
 .quick-access-button:hover {
     background-color: #217dbb;
+}
+
+.historial-total{
+    background-color: #1e1c3f85;
+    padding: 10px;
+    border-radius: 15px;
+    margin-top: 10px;
+    width: 95%;
+    bottom: auto;
+    font-size: 18px;
 }

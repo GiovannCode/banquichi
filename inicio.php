@@ -42,24 +42,25 @@ if (isset($_POST['desac'])) {
 
 <div class="container-principal">
     <div class="container-1-inicio">
-        <img src="img/img-5.png" alt="">
+        <img src="https://icones.pro/wp-content/uploads/2022/03/icone-de-l-historique-bleu.png" alt="">
         <div class="container-1-info-text">
 
             <section>
                 <div class="container">
-                <h2>Tipos de Monedas</h2>
-                <p>Consulta las monedas disponibles para tus transacciones internacionales:</p>
+                <h2>Historial</h2>
+                <p>Consulta El Historial De Transferencias:</p>
                 <ul class="currency-list">
-                <li><strong>USD</strong> - Dólar Estadounidense</li>
-                <li><strong>EUR</strong> - Euro</li>
-                <li><strong>MXN</strong> - Peso Mexicano</li>
-                <li><strong>JPY</strong> - Yen Japonés</li>
-                <li><strong>GBP</strong> - Libra Esterlina</li>
-                <li><strong>CAD</strong> - Dólar Canadiense</li>
-                <li><strong>CNY</strong> - Yuan Chino</li>
+                <li><strong>nombre:</strong> YO</li>
+                <li><strong>Monto:</strong> $50,000</li>
+                <li><strong>A Quien Se La Hizo:</strong> Gio</li>
+                <li><strong>Fecha:</strong> 05/02/2005</li>
                 </ul>
             </div>
+
             </section>
+            <div class="historial-total">
+                <p>Total: $5000</p>
+            </div>
         </div>
     </div>
     <div class="container-2-inicio">
