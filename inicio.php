@@ -96,7 +96,7 @@ if (isset($_POST['desac'])) {
                 <li class="service-item">Numero de cuenta: <?php echo $_SESSION['numero_c']?> </li>
                 <li class="service-item">Correo: <?php echo $_SESSION['email']?> </li>
                 <li class="service-item">Tipo de cuenta: <?php echo $_SESSION['tipo_c']?> </li>
-                <li class="service-item">Con estos datos podras realizar transacciones de forma segura</li>
+                <li class="service-item">Saldo</li>
             </ul>
             <div class="service-cta">
                 <form method="post">
