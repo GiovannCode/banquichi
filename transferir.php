@@ -30,7 +30,7 @@
         </div>
         <div class="content-login">
             <div class="content-register-text">
-                <h1>Gracias por formar parte de nuestro banco</h1>
+                <h1>Transfiere de forma rápida y segura. Ingresa los datos de la cuenta destino, completa tu transferencia en minutos. ¡Así de fácil!</h1>
                 <br>
                 <p> </p>
                 <br>
