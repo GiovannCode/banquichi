@@ -583,7 +583,7 @@ footer {
     outline: none;
 }
 
-.fa-user, .fa-envelope, .fa-phone, .fa-money-bill, .fa-lock,.fa-hashtag,.fa-key,.fa-file-invoice,.fa-arrow-up-9-1,.fa-file-invoice{
+.fa-user, .fa-envelope, .fa-phone, .fa-money-bill, .fa-lock,.fa-hashtag,.fa-key,.fa-file-invoice,.fa-arrow-up-9-1,.fa-file-invoice,.fa-money-bill-transfer{
     position: absolute;
     transform: translateY(-40%);
     margin-left: 90%;
@@ -799,7 +799,7 @@ option{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 50px;
     color: #fff;
 }
 

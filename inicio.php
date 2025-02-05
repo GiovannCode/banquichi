@@ -117,7 +117,7 @@ if (isset($_POST['desac'])) {
                 <h2 class="quick-access-title">Accesos Rápidos</h2>
                 <div class="quick-access-buttons">
                     <a href="transferir.php" class="quick-access-button">Transferencias</a>
-                    <a href="#pago-servicios" class="quick-access-button">Pago de Servicios</a>
+                    <a href="depositar.php" class="quick-access-button">Depositar</a>
                     <a href="#gestion-tarjetas" class="quick-access-button">Gestión de Tarjetas</a>
                     <a href="#solicitudes-rapidas" class="quick-access-button">Solicitudes Rápidas</a>
                 </div>
