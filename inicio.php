@@ -1,13 +1,15 @@
 <?php 
 session_start();
+require_once 'db_conexion.php';
 if (isset($_POST['desac'])) {
-    $email = $_SESSION['email'];
+    $numero_c = $_SESSION['numero_c'];
     $estado = false;
-    $sql = $cnnPDO->prepare("UPDATE form1 SET estado = ? WHERE email = ?");
-    $sql->execute([$estado, $email]);
+    $sql = $cnnPDO->prepare("UPDATE cliente SET estado = ? WHERE numero_c = ?");
+    $sql->execute([$estado, $numero_c]);
     unset($sql);
     unset($cnnPDO);
-    echo $alerta;
+    session_destroy();
+    header('location:index.php');
 }
 ?>
 <!DOCTYPE html>
@@ -101,7 +103,7 @@ if (isset($_POST['desac'])) {
             <div class="service-cta">
                 <form method="post">
                     <input type="hidden" name="numero_c" value="<?php echo $_SESSION['numero_c']?>">
-                    <button class="service-button" type="submit" name="delete">Desactivar cuenta</button>
+                    <button class="service-button" type="submit" name="desac">Desactivar cuenta</button>
                 </form>
                 <!-- <a href="#solicitar-inversion" class="service-button">Desactivar cuenta</a> -->
             </div>
