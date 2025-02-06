@@ -2,10 +2,10 @@
 session_start();
 require_once 'db_conexion.php';
 
-if (isset($_POST['login'])) {
-    $numero_c_origen = $_SESSION['numero_c']; 
-    $numero_c_destino = $_POST['numero_c'];  
-    $monto = $_POST['monto']; 
+if (isset($_POST['transferir'])) {
+    $numero_c_origen = $_SESSION['numero_c'];
+    $numero_c_destino = $_POST['numero_c'];
+    $monto = $_POST['monto'];
 
     $sql = $cnnPDO->prepare("SELECT saldo FROM cliente WHERE numero_c = ?");
     $sql->execute([$numero_c_origen]);
@@ -13,6 +13,8 @@ if (isset($_POST['login'])) {
 
     if (!$origen || $origen['saldo'] < $monto) {
         echo "<script>alert('Saldo insuficiente para la transferencia.');</script>";
+    } elseif ($numero_c_origen == $numero_c_destino) {
+        echo "<script>alert('No puedes transferir a la misma cuenta.');</script>";
     } else {
         $sql = $cnnPDO->prepare("SELECT saldo FROM cliente WHERE numero_c = ?");
         $sql->execute([$numero_c_destino]);
@@ -26,10 +28,12 @@ if (isset($_POST['login'])) {
 
             $sql = $cnnPDO->prepare("UPDATE cliente SET saldo = saldo + ? WHERE numero_c = ?");
             $sql->execute([$monto, $numero_c_destino]);
-
+            
+            
             $_SESSION['saldo'] -= $monto;
 
             echo "<script>alert('Transferencia realizada con éxito.'); window.location.href='inicio.php';</script>";
+
         }
     }
 }
@@ -59,7 +63,7 @@ if (isset($_POST['login'])) {
 
                 <span class="saldo">
                     <p><?php echo $_SESSION['saldo']?>$</p>
-                    <button class="btn-form-trans" type="submit" name="login">Transferir</button>
+                    <button class="btn-form-trans" type="submit" name="transferir">Transferir</button>
                 </span>
                 </form>
             </div>
