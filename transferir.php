@@ -1,25 +1,26 @@
 <?php
 session_start();
 require_once 'db_conexion.php';
-
 if (isset($_POST['transferir'])) {
     $numero_c_origen = $_SESSION['numero_c'];
     $numero_c_destino = $_POST['numero_c'];
     $monto = $_POST['monto'];
 
-    $sql = $cnnPDO->prepare("SELECT saldo FROM cliente WHERE numero_c = ?");
+    $sql = $cnnPDO->prepare("SELECT saldo, name FROM cliente WHERE numero_c = ?");
     $sql->execute([$numero_c_origen]);
     $origen = $sql->fetch(PDO::FETCH_ASSOC);
+
+    
+    
 
     if (!$origen || $origen['saldo'] < $monto) {
         echo "<script>alert('Saldo insuficiente para la transferencia.');</script>";
     } elseif ($numero_c_origen == $numero_c_destino) {
         echo "<script>alert('No puedes transferir a la misma cuenta.');</script>";
     } else {
-        $sql = $cnnPDO->prepare("SELECT saldo FROM cliente WHERE numero_c = ?");
+        $sql = $cnnPDO->prepare("SELECT saldo, name FROM cliente WHERE numero_c = ?");
         $sql->execute([$numero_c_destino]);
         $destino = $sql->fetch(PDO::FETCH_ASSOC);
-
         if (!$destino) {
             echo "<script>alert('La cuenta destino no existe.');</script>";
         } else {
@@ -29,7 +30,11 @@ if (isset($_POST['transferir'])) {
             $sql = $cnnPDO->prepare("UPDATE cliente SET saldo = saldo + ? WHERE numero_c = ?");
             $sql->execute([$monto, $numero_c_destino]);
             
-            
+            date_default_timezone_set('America/Mexico_City');
+            $fecha = date("Y-m-d H:i:s");
+            $sql = $cnnPDO->prepare("INSERT INTO transferencias (numero_c_remitente, nombre_remitente, fecha, monto, numero_c_destinatario, nombre_destinatario) VALUES (?, ?, ?, ?, ?, ?)");
+            $sql->execute([$numero_c_origen, $origen['name'], $fecha, $monto, $numero_c_destino, $destino['name']]);
+
             $_SESSION['saldo'] -= $monto;
 
             echo "<script>alert('Transferencia realizada con éxito.'); window.location.href='inicio.php';</script>";
